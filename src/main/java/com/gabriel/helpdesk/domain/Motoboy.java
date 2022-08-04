@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.gabriel.helpdesk.domain.enums.Perfil;
+
 @Entity
 public class Motoboy extends Pessoa{
 	
@@ -16,10 +18,12 @@ public class Motoboy extends Pessoa{
 
 	public Motoboy() {
 		super();
+		addPerfil(Perfil.MOTOBOY);
 	}
 
 	public Motoboy(Integer id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
+		addPerfil(Perfil.MOTOBOY);
 	}
 
 	public List<Chamado> getChamados() {

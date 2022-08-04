@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.gabriel.helpdesk.domain.enums.Perfil;
+
 @Entity
 public class Estabelecimento extends Pessoa{
 	private static final long serialVersionUID = 1L;
@@ -15,10 +17,12 @@ public class Estabelecimento extends Pessoa{
 
 	public Estabelecimento() {
 		super();
+		addPerfil(Perfil.ESTABELECIMENTO);
 	}
 
 	public Estabelecimento(Integer id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
+		addPerfil(Perfil.ESTABELECIMENTO);
 	}
 
 	public List<Chamado> getChamados() {
