@@ -47,6 +47,15 @@ public class EstabelecimentoService {
 		oldObj = new Estabelecimento(objDTO);
 		return repository.save(oldObj);
 	}
+	
+	public void delete(Integer id) {
+		Estabelecimento obj = findById(id);
+		if(obj.getChamados().size() > 0) {
+			throw new DataIntegrityViolationException("Estabelecimento PEssui ordens de serviço e não pode ser deletado!");
+		}else {
+			repository.deleteById(id);
+		}
+	}
 
 	private void validaPorCpfEEmail(EstabelecimentoDTO objDTO) {
 		Optional<Pessoa> obj = pessoaRepository.findByCpf(objDTO.getCpf());
@@ -58,6 +67,8 @@ public class EstabelecimentoService {
 			throw new DataIntegrityViolationException("Email ja cadastrado no sistema"); 
 	}
 }
+
+	
 
 	
 	}
