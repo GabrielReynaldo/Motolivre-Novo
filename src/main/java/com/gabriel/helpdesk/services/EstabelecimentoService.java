@@ -3,6 +3,8 @@ package com.gabriel.helpdesk.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,14 @@ public class EstabelecimentoService {
 		Estabelecimento newObj = new Estabelecimento(objDTO);
 		return repository.save(newObj);
 	}
+	
+	public Estabelecimento update(Integer id, @Valid EstabelecimentoDTO objDTO) {
+		objDTO.setId(id);
+		Estabelecimento oldObj = findById(id);
+		validaPorCpfEEmail(objDTO);
+		oldObj = new Estabelecimento(objDTO);
+		return repository.save(oldObj);
+	}
 
 	private void validaPorCpfEEmail(EstabelecimentoDTO objDTO) {
 		Optional<Pessoa> obj = pessoaRepository.findByCpf(objDTO.getCpf());
@@ -47,4 +57,7 @@ public class EstabelecimentoService {
 		if(obj.isPresent() && obj.get().getId() != objDTO.getId()) {
 			throw new DataIntegrityViolationException("Email ja cadastrado no sistema"); 
 	}
-}}
+}
+
+	
+	}
