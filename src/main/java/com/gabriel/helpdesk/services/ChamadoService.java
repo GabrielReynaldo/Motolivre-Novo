@@ -1,7 +1,10 @@
 package com.gabriel.helpdesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +40,12 @@ public class ChamadoService {
 	public Chamado create(ChamadoDTO objDTO) {		
 		return repository.save(newChamado(objDTO));
 	}
+	public Chamado update(Integer id,@Valid ChamadoDTO objDTO) {
+		objDTO.setId(id);
+		Chamado oldObj = findById(id);
+		oldObj = newChamado(objDTO);
+		return repository.save(oldObj);
+	}
 	
 	private Chamado newChamado(ChamadoDTO obj) {
 		Estabelecimento estabelecimento = estabelecimentoService.findById(obj.getEstabelecimento());
@@ -45,6 +54,9 @@ public class ChamadoService {
 		Chamado chamado = new Chamado();
 		if(obj.getId() != null) {
 			chamado.setId(obj.getId());
+		}
+		if(obj.getStatus().equals(2)) {
+			chamado.setDataFechamento(LocalDate.now());
 		}
 		
 		chamado.setEstabelecimento(estabelecimento);
@@ -55,5 +67,7 @@ public class ChamadoService {
 		chamado.setObservacoes(obj.getObservacoes());
 		return chamado;
 	}
+
+	
 	}
 
