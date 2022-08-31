@@ -47,6 +47,10 @@ public class MotoboyService {
 	public Motoboy update(Integer id, @Valid MotoboyDTO objDTO) {
 		objDTO.setId(id);
 		Motoboy oldObj = findById(id);
+		
+		if(!objDTO.getSenha().equals(oldObj.getSenha())) {
+			objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+			
 		validaPorCpfEEmail(objDTO);
 		oldObj = new Motoboy(objDTO);
 		return repository.save(oldObj);
