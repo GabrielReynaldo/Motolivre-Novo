@@ -47,6 +47,11 @@ public class EstabelecimentoService {
 	public Estabelecimento update(Integer id, @Valid EstabelecimentoDTO objDTO) {
 		objDTO.setId(id);
 		Estabelecimento oldObj = findById(id);
+		
+		if(!objDTO.getSenha().equals(oldObj.getSenha())) {
+			objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+		}
+		
 		validaPorCpfEEmail(objDTO);
 		oldObj = new Estabelecimento(objDTO);
 		return repository.save(oldObj);

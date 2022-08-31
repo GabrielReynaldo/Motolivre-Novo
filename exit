@@ -1,0 +1,161 @@
+[33mcommit 47821a8a8b2e7e70f6498b5d9e1b58ba3dd5683c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sun Aug 21 21:46:42 2022 -0300
+
+    salvando alterações
+
+[33mcommit 56ea0519fea576a4b7af44d128223ff068a242b4[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Mon Aug 8 16:55:08 2022 -0300
+
+    deploy
+
+[33mcommit 15ea38d968de8ace809db9ea8bdda02c736f7165[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Mon Aug 8 16:43:11 2022 -0300
+
+    autorização com jwt
+
+[33mcommit 9a024e57cb539bb30606c5db7d268616994f11db[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Mon Aug 8 00:48:18 2022 -0300
+
+    autenticacao com jwt
+
+[33mcommit 6f15e2b98482cef85a3b8d2ec9eebb5a1a4d04de[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sun Aug 7 02:11:34 2022 -0300
+
+    update para chamado implementado
+
+[33mcommit d5cb343401e7109b5dccafe88e09c5cc30385738[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sun Aug 7 02:00:00 2022 -0300
+
+    create para chamado
+
+[33mcommit 980fc14087892b057f17401482193d847cc35ebb[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sun Aug 7 01:10:42 2022 -0300
+
+    findALL para chamado
+
+[33mcommit 204c2fa49b3b7a5e706ce722f1248b04bc59a430[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sun Aug 7 01:01:58 2022 -0300
+
+    findbyid para chamado
+
+[33mcommit f239e4462691efec42d596a63d8f56330e14c97d[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Sat Aug 6 23:27:03 2022 -0300
+
+    crud para motoboy implementado
+
+[33mcommit b93beecba498d944efc23a86447f9d594723114e[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Aug 5 23:03:52 2022 -0300
+
+    delete para estabelecimento
+
+[33mcommit 348e1e2fda619bf1b1c994c3ee3dc370ba2a9235[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Aug 5 22:53:08 2022 -0300
+
+    metodo put para estabelecimento implementado
+
+[33mcommit 58d5def853a099a3c401e5a2a4319dcff58878e3[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Aug 5 20:17:13 2022 -0300
+
+    validação nos campos de criação de novo usuario
+
+[33mcommit 8f8c63e5d3244697b292f869b6ca566c2ea6e37d[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Thu Aug 4 21:26:47 2022 -0300
+
+    exceção para cpf e email ja cadastrado
+
+[33mcommit 46bbe7064fc8267a05699dab1eba04228de9a06d[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Thu Aug 4 18:06:09 2022 -0300
+
+    endpoint create para estabelecimento
+
+[33mcommit a62d0cba5614f4332215e383aca56329586f19b0[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Thu Aug 4 17:32:14 2022 -0300
+
+    endpoint findall para estabelecimento
+
+[33mcommit 91d16cfa0b7b4a6faa014c4097580453022a459f[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Thu Aug 4 17:19:35 2022 -0300
+
+    exceção para objeto nao encontrado
+
+[33mcommit bed5d4d5e921ea1443b47f656f54fc46b5f0278f[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Thu Aug 4 17:02:42 2022 -0300
+
+    padrao dto para estabelecimento
+
+[33mcommit 33f9261d72656e9e0cbd639ad1b06034e59b3426[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 22:43:01 2022 -0300
+
+    endpoint findbyid para tecnico
+
+[33mcommit 9497ecc1e2b3502f53b425dcda8a17b36dd4f89f[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 22:42:36 2022 -0300
+
+    protegendo a aplicação contra serializacao
+
+[33mcommit 1fef654c1588eb86cdea2b99df559df7bdee5b5b[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 22:04:23 2022 -0300
+
+    perfil de desenvolvimento
+
+[33mcommit 1efee51a097e6bb1bb083fc69e49e53e3c8539d8[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 21:43:12 2022 -0300
+
+    Perfil de teste criado
+
+[33mcommit 05cb96c3a079c6dbd89be884121c14e670c9f19f[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 21:26:32 2022 -0300
+
+    carga inicial da base de dados
+
+[33mcommit e28c25fb806088cf472d39d0d5428676cb8a7b95[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 21:26:06 2022 -0300
+
+    repositories criados
+
+[33mcommit a580ac6866aaed6ed139b819cdb22d90a0d1faeb[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Wed Aug 3 20:25:37 2022 -0300
+
+    Anotações jpa para classes de dominio
+
+[33mcommit 133ef442caa18fef2e64ab8e2e2b859eabd1ab2d[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Jul 15 10:03:13 2022 -0300
+
+    classes de dominio iniciadas
+
+[33mcommit 53c9c5349439e1f5e7b347691e2ffd010dc8a18f[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Jul 15 09:35:01 2022 -0300
+
+    tipos enumerados
+
+[33mcommit 671b775b159877b9092c660e61273555112f6050[m
+Author: GabrielReynaldo <gabrielreynaldo123@gmail.com>
+Date:   Fri Jul 15 09:21:31 2022 -0300
+
+     projeto iniciado
