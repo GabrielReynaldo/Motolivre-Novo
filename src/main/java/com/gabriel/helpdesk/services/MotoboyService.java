@@ -59,7 +59,7 @@ public class MotoboyService {
 	public void delete(Integer id) {
 		Motoboy obj = findById(id);
 		if(obj.getChamados().size() > 0) {
-			throw new DataIntegrityViolationException("Motoboy PEssui ordens de serviço e não pode ser deletado!");
+			throw new DataIntegrityViolationException("Motoboy Pessui ordens de serviço e não pode ser deletado!");
 		}else {
 			repository.deleteById(id);
 		}
