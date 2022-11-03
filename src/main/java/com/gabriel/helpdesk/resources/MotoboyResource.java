@@ -25,7 +25,7 @@ import com.gabriel.helpdesk.services.MotoboyService;
 @RestController
 @RequestMapping(value = "/motoboys")
 public class MotoboyResource {
-//localhost:8080/estabelecimentos
+
 	
 	@Autowired
 	private MotoboyService service;

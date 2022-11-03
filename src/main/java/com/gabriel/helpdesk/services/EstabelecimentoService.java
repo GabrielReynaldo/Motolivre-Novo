@@ -60,7 +60,7 @@ public class EstabelecimentoService {
 	public void delete(Integer id) {
 		Estabelecimento obj = findById(id);
 		if(obj.getChamados().size() > 0) {
-			throw new DataIntegrityViolationException("Estabelecimento PEssui ordens de serviço e não pode ser deletado!");
+			throw new DataIntegrityViolationException("Estabelecimento Possui ordens de serviço e não pode ser deletado!");
 		}else {
 			repository.deleteById(id);
 		}

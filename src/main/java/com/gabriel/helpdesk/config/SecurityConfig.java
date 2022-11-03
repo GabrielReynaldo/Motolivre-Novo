@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -36,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
 		if(Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
 		}
@@ -43,9 +45,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.cors().and().csrf().disable();
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
 		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
-		http.authorizeRequests().antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().authenticated();
-		
+		//AQUI FICA A SEPARAÇÃO DE USUARIOS, DE QUEM PODE VER QUEM
+		http.authorizeRequests().antMatchers(HttpMethod.GET ,"/motoboys").hasRole("ESTABELECIMENTO")
+								.antMatchers(HttpMethod.POST, "/motoboys").permitAll()
+								.antMatchers(HttpMethod.GET ,"/estabelecimentos").hasRole("MOTOBOY")
+								.antMatchers(HttpMethod.GET).hasRole("ADMIN")
+								.antMatchers(HttpMethod.DELETE).hasRole("ADMIN")
+
+		.anyRequest().authenticated();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		
 	}
 	
 	@Override
@@ -66,4 +75,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
+
+
 }
+
