@@ -46,11 +46,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
 		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 		//AQUI FICA A SEPARAÇÃO DE USUARIOS, DE QUEM PODE VER QUEM
-		http.authorizeRequests().antMatchers(HttpMethod.GET ,"/motoboys").hasRole("ESTABELECIMENTO")
-								.antMatchers(HttpMethod.POST, "/motoboys").permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.GET ,"/motoboys").hasAnyAuthority("ESTABELECIMENTO")
+								.antMatchers(HttpMethod.POST,"/motoboys").permitAll()
 								.antMatchers(HttpMethod.GET ,"/estabelecimentos").hasRole("MOTOBOY")
-								.antMatchers(HttpMethod.GET).hasRole("ADMIN")
-								.antMatchers(HttpMethod.DELETE).hasRole("ADMIN")
+								.antMatchers(HttpMethod.POST,"/estabelecimentos").permitAll()
+								
 
 		.anyRequest().authenticated();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
