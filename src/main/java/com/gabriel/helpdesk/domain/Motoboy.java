@@ -20,6 +20,7 @@ public class Motoboy extends Pessoa{
 	@JsonIgnore
 	@OneToMany(mappedBy = "motoboy")
 	private List<Chamado> chamados = new ArrayList<>();
+	private List<Avaliacao> avaliacao = new ArrayList<>();
 
 	public Motoboy() {
 		super();
@@ -48,7 +49,13 @@ public class Motoboy extends Pessoa{
 	public void setChamados(List<Chamado> chamados) {
 		this.chamados = chamados;
 	}
-	
+	public List<Avaliacao> getAvaliacao() {
+		return avaliacao;
+	}
+
+	public void setAvaliacao(List<Avaliacao> avaliacao) {
+		this.avaliacao = avaliacao;
+	}
 	
 
 }
