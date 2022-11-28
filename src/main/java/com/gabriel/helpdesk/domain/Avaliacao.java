@@ -24,6 +24,7 @@ public class Avaliacao implements Serializable {
 	
 	@JsonFormat(pattern = "dd/MM/yyyy" )
 	private LocalDate dataAbertura = LocalDate.now();
+	
 	private String defeito;
 	private String qualidade;
 	private String melhora;

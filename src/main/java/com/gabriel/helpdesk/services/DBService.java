@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.gabriel.helpdesk.domain.Avaliacao;
 import com.gabriel.helpdesk.domain.Chamado;
 import com.gabriel.helpdesk.domain.Estabelecimento;
 import com.gabriel.helpdesk.domain.Motoboy;
 import com.gabriel.helpdesk.domain.enums.Perfil;
 import com.gabriel.helpdesk.domain.enums.Prioridade;
 import com.gabriel.helpdesk.domain.enums.Status;
+import com.gabriel.helpdesk.repositories.AvaliacaoRepository;
 import com.gabriel.helpdesk.repositories.ChamadoRepository;
 import com.gabriel.helpdesk.repositories.PessoaRepository;
 
@@ -20,6 +22,8 @@ public class DBService {
 	
 	@Autowired
 	private ChamadoRepository chamadoRepository;
+	@Autowired
+	private AvaliacaoRepository avaliacaoRepository;
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	@Autowired
@@ -56,7 +60,10 @@ public class DBService {
 		Chamado c8 = new Chamado(null,Prioridade.BAIXA,Status.ANDAMENTO,"Chamado 08","Primeiro chamado",est4,mot1);
 		Chamado c9 = new Chamado(null,Prioridade.ALTA,Status.ABERTO,"Chamado 09","Primeiro chamado",est3,mot4);
 		
+		Avaliacao A1 = new Avaliacao(null,"ele é muito lento","Compreensivo e animado", "Pode ser mias comunicativo","Não tem Abilitação",mot1,est1);
+		
 		pessoaRepository.saveAll(Arrays.asList(est1,est2,est3,est4 , mot1, mot2,mot3,mot4));
+		avaliacaoRepository.saveAll(Arrays.asList(A1));
 		chamadoRepository.saveAll(Arrays.asList(c1,c2,c3,c4,c5,c6,c7,c8,c9));
 	}
 	
