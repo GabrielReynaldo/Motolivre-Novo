@@ -18,6 +18,7 @@ public class Estabelecimento extends Pessoa{
 	@JsonIgnore
 	@OneToMany(mappedBy = "estabelecimento")
 	private List<Chamado> chamados = new ArrayList<>();
+	@OneToMany(mappedBy = "estabelecimento")
 	private List<Avaliacao> avaliacao = new ArrayList<>();
 
 	public Estabelecimento() {

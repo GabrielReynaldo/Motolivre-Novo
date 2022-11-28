@@ -20,6 +20,7 @@ public class Motoboy extends Pessoa{
 	@JsonIgnore
 	@OneToMany(mappedBy = "motoboy")
 	private List<Chamado> chamados = new ArrayList<>();
+	@OneToMany(mappedBy = "motoboy")
 	private List<Avaliacao> avaliacao = new ArrayList<>();
 
 	public Motoboy() {
