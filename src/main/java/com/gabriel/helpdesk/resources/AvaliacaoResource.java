@@ -1,5 +1,8 @@
 package com.gabriel.helpdesk.resources;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gabriel.helpdesk.domain.Avaliacao;
 import com.gabriel.helpdesk.domain.dtos.AvaliacaoDTO;
+import com.gabriel.helpdesk.domain.dtos.ChamadoDTO;
 import com.gabriel.helpdesk.services.AvaliacaoService;
 
 @RestController
@@ -23,4 +27,11 @@ public class AvaliacaoResource {
 		Avaliacao obj = service.findById(id);
 		return ResponseEntity.ok().body(new AvaliacaoDTO(obj));
 	}
+	
+	@GetMapping
+	public ResponseEntity<List<AvaliacaoDTO>> findAll(){
+		List<Avaliacao> list = service.findAll();
+		List<AvaliacaoDTO> listDTO = list.stream().map(obj -> new AvaliacaoDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 }
+	}
